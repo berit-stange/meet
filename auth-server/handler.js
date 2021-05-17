@@ -1,5 +1,4 @@
 const { google } = require("googleapis");
-const { resultingClientExists } = require("workbox-core/_private");
 const OAuth2 = google.auth.OAuth2;
 const calendar = google.calendar("v3");
 
@@ -110,7 +109,7 @@ module.exports.getCalendarEvents = async (event) => {
         headers: {
           "Access-Control-Allow-Origin": "*"
         },
-        body: JSON.stringify({ events: resultingClientExists.data.items })
+        body: JSON.stringify({ events: results.data.items })
       };
     })
     .catch((err) => {
