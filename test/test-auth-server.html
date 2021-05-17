@@ -25,17 +25,25 @@
         <!-- STEP 1 -->
 
         <h4>STEP 1: Get OAuth URL</h4>
-        <p>Click the button below to get the OAuth URL.</p>
+        <p>Click the button below to get the OAuth URL from Google Calendar API <br>
+            Contains: access_type, scope (readonly), client_id, redirect_uri ().../github.io/meet)
+        </p>
         <button id="getCode">Get OAuth URL</button>
         <p id="result"></p>
-
+        <br>
+        <p>GET CODE: <br>
+            with this authURL redirect to React App via Google Login as the test user <br>
+            > get the code in the URI
+        </p>
         <a id="authURL" href target="_blank">Click to authorize</a>
-
+        <br>
+        <br>
         <!-- STEP 2 -->
 
         <h4>STEP 2: get code and exchange it for access token</h4>
-        <p>After being redirected back to the Meet App on github, copy the code from the URI!</p>
-        <br>
+        <p>After being redirected back to the React App on GitHub, <br>
+            copy the code from the URI and use it to exchange for token <br>
+            (also from Google Calendar Api) via AWS Authorization Server</p>
         <label>code input
             <input id="code" type="text" value="" />
         </label>
