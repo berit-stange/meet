@@ -8,8 +8,14 @@ class CitySearch extends Component {
 
     handleInputChanged = (event) => {
         const value = event.target.value;
-        this.setState({ query: value });
-    }
+        const suggestions = this.props.locations.filter((location) => { //using this.props.locations within the function because will be passed from App component later -  enough to pass test for now
+            return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
+        });
+        this.setState({
+            query: value,
+            suggestions,
+        });
+    };
 
     render() {
         return (
