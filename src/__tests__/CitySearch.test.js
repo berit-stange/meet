@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import CitySearch from '../CitySearch';
 
+
 describe('<CitySearch /> component', () => {
 
     test('render text input field', () => {
@@ -12,6 +13,12 @@ describe('<CitySearch /> component', () => {
     test('render list of suggestions', () => {
         const CitySearchWrapper = shallow(<CitySearch />);
         expect(CitySearchWrapper.find('.suggestions')).toHaveLength(1);
+    });
+
+    test('render text input correctly', () => {
+        const CitySearchWrapper = shallow(<CitySearch />);
+        const query = CitySearchWrapper.state('query');
+        expect(CitySearchWrapper.find('.city').prop('value')).toBe(query);
     });
 
 });
