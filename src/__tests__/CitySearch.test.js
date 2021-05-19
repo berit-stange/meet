@@ -24,7 +24,7 @@ describe('<CitySearch /> component', () => {
     test('change state when text input changes', () => {
         const CitySearchWrapper = shallow(<CitySearch />);
         CitySearchWrapper.setState({
-            query: 'Munich'
+            query: 'Berlin'
         });
         const eventObject = { target: { value: 'Berlin' } };
         CitySearchWrapper.find('.city').simulate('change', eventObject);
