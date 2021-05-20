@@ -10,6 +10,11 @@ describe('<Event /> component', () => {
     beforeAll(() => {
         EventWrapper = shallow(<Event event={event} />);
     });
+    beforeEach(() => {
+        EventWrapper.setState({
+            showDetails: false
+        });
+    });
 
     test('f2/scen1 - does element containing event exist?', () => {
         expect(EventWrapper.find('.event')).toHaveLength(1);
