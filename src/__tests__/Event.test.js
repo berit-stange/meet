@@ -77,9 +77,11 @@ describe('<Event /> component', () => {
         expect(EventWrapper.find('.btn-hide-details')).toHaveLength(1);
     });
 
+    // seperated click handler functions
     // test('change state to hide Details when button "Hide Details" clicked', () => {
-    //     const event = mockData[0];
-    //     const EventWrapper = shallow(<Event event={event} />);
+    //     EventWrapper.setState({
+    //         showDetails: true
+    //     });
     //     EventWrapper.find('.btn-hide-details').simulate('click');
     //     expect(EventWrapper.state('showDetails')).toBe(false);
     // });

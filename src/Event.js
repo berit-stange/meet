@@ -12,6 +12,12 @@ class Event extends Component {
         }));
     }
 
+    // handleItemShow = (showDetails) => {
+    //     this.setState({
+    //         showDetails: true
+    //     });
+    // };
+
     // handleItemHide = (showDetails) => {
     //     this.setState({
     //         showDetails: false
@@ -38,7 +44,7 @@ class Event extends Component {
                             id="btn-hide-details"
                             className="btn-hide-details"
                             onClick={this.handleItemClicked}
-                        // onClick={() => this.handleItemClicked()}
+                        // onClick={this.handleItemHide}
                         >Hide Details
                         </button>
 
@@ -47,7 +53,7 @@ class Event extends Component {
                     <button
                         className="btn-details"
                         onClick={this.handleItemClicked}
-                    // onClick={() => this.handleItemClicked()}
+                    // onClick={this.handleItemShow}
                     >Show Details
                     </button>
                 )}
