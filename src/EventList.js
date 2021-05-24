@@ -6,11 +6,11 @@ class EventList extends Component {
         const { events } = this.props;
         return (
             <ul className="EventList">
-                {events.map(event =>
-                    <li key={event.id}>
+                {events.map((event) => (
+                    <li key={event.id} className="EventListItems">
                         <Event event={event} />
                     </li>
-                )}
+                ))}
             </ul>
         );
     }

@@ -39,7 +39,7 @@ describe('<App /> integration', () => {
         AppWrapper.unmount();
     });
 
-    test('App passes "locations" state as aprop to CitySearch', () => {
+    test('App passes "locations" state as prop to CitySearch', () => {
         const AppWrapper = mount(<App />);
         const AppLocationsState = AppWrapper.state('locations');
         expect(AppLocationsState).not.toEqual(undefined);
@@ -68,6 +68,44 @@ describe('<App /> integration', () => {
         await suggestionItems.at(suggestionItems.length - 1).simulate('click');
         const allEvents = await getEvents();
         expect(AppWrapper.state('events')).toEqual(allEvents);
+        AppWrapper.unmount();
+    });
+
+    test('App passes state "numberOfEvents" as prop to NumberOfEvents', () => {
+        const AppWrapper = mount(<App />);
+        const NumberState = AppWrapper.state('numberOfEvents');
+        expect(NumberState).not.toEqual(undefined);
+        expect(AppWrapper.find(NumberOfEvents).props().numberOfEvents).toEqual(NumberState);
+        AppWrapper.unmount();
+    });
+
+    // test('App passes state "numberOfEvents" as prop to EventList', () => { // not neccessary for the app to work
+    //     const AppWrapper = mount(<App />);
+    //     const NumberState = AppWrapper.state('numberOfEvents');
+    //     expect(NumberState).not.toEqual(undefined);
+    //     expect(AppWrapper.find(EventList).props().numberOfEvents).toEqual(NumberState);
+    //     AppWrapper.unmount();
+    // });
+
+    test('when state "numberOfEvents" changes on input, state "numberOfEvents" in App changes', async () => {
+        const AppWrapper = mount(<App />);
+        const input = { target: { value: 1 } };
+        await AppWrapper.find('.number-input').simulate('change', input);
+        expect(AppWrapper.state('numberOfEvents')).toBe(1);
+        AppWrapper.unmount();
+    });
+
+    test('when input number changes state "numberOfEvents", the filtered list is shortened', async () => {
+        const AppWrapper = mount(<App />);
+        AppWrapper.setState({
+            numberOfEvents: 10
+        });
+        const numberOfEventsState = AppWrapper.state('numberOfEvents');
+        await AppWrapper.instance().updateEvents('all', numberOfEventsState);
+        const allEvents = await getEvents();
+        const eventsToShow = allEvents.slice(0, numberOfEventsState); // similar to CitySearch
+        expect(numberOfEventsState).toBe(10);
+        expect(AppWrapper.state('events')).toEqual(eventsToShow);
         AppWrapper.unmount();
     });
 

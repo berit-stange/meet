@@ -12,7 +12,7 @@ class Event extends Component {
         }));
     }
 
-    // handleItemHide = (showDetails) => {
+    // handleItemHide = (showDetails) => {  // will delete later
     //     this.setState({
     //         showDetails: false
     //     });
