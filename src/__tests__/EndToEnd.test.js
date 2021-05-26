@@ -47,7 +47,11 @@ describe('Filter events by city', () => {
     let page;
     beforeAll(async () => {
         jest.setTimeout(30000);
-        browser = await puppeteer.launch(); // inside () add headless mode: (code above)
+        browser = await puppeteer.launch({
+            headless: false,
+            slowMo: 250,
+            ignoreDefaultArgs: ['--disable-extensions']
+        });
         page = await browser.newPage();
         await page.goto('http://localhost:3000/');
         await page.waitForSelector('.CitySearch');
@@ -57,18 +61,23 @@ describe('Filter events by city', () => {
     });
 
     // Scenario 1
-    // test('When user hasn’t searched for a city, show upcoming events from all cities', async () => {
     // no action, just page loaded
-    // });
 
     // Scenario 2
-    test('User should see a list of suggestions when they search for a city', () => {
-        page.type('.city', 'Berlin');
+    test('User should see a list of suggestions when they search for a city', async () => {
+        await page.type('.city', 'Berlin');
+        const suggestionsList = await page.$('.suggestions');
+        expect(suggestionsList).toBeDefined();
     });
 
     // Scenario 3
-    test('User can select a city from the suggested list', async () => {
+    // test('User can select a city from the suggested list', async () => {
+    //     await page.click('.suggestions li').at(0);
 
-    });
+    //     // const selectedCity = await page.$('.suggestions');
+    //     // expect(selectedCity).toBeDefined();
+
+    //     expect(AppWrapper.state('events')).toEqual('Berlin');
+    // });
 
 });
