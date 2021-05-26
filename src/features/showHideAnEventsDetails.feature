@@ -12,5 +12,5 @@ Then details should be expanded for user to see the details
 
 Scenario: User can collapse an event to hide its details
 Given user has expanded event details
-When the user clicks button to hide deatils
+When the user clicks button to hide details
 Then element should be collapsed 
