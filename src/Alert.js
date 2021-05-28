@@ -5,22 +5,18 @@ class Alert extends Component {
         super(props);
         this.color = null;
         // this.backgroundColor = null;
-        // this.fontSize = 'var(--font - small)';
-        // this.fontStyle = 'var(--font - italic)';
-        // this.width = '12rem';
-        // this.height = '12rem';
-        // this.borderRadius = '50%';
-        // this.position = 'fixed';
-        // this.top = '10%';
-        // this.left = '65%';
+        // this.width = null;
+        // this.height = null;
+        // this.borderRadius = null;
+        // this.position = null;
+        // this.top = null;
+        // this.left = null;
     }
 
     getStyle = () => {
         return {
             color: this.color,
             // backgroundColor: this.backgroundColor,
-            // fontSize: this.fontSize,
-            // fontStyle: this.fontStyle,
             // width: this.width,
             // height: this.height,
             // borderRadius: this.borderRadius,
@@ -45,6 +41,12 @@ class InfoAlert extends Alert {
         super(props);
         this.color = 'var(--dark-color)';
         // this.backgroundColor = 'var(--light-color)';
+        // this.width = '12rem';
+        // this.height = '12rem';
+        // this.borderRadius = '50%';
+        // this.position = 'fixed';
+        // this.top = '10%';
+        // this.left = '65%';
     }
 }
 
