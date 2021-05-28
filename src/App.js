@@ -12,23 +12,19 @@ class App extends Component {
     events: [],
     locations: [],
     numberOfEvents: 24,
-    selectedLocation: 'all'
+    selectedLocation: 'all',
   }
 
   updateEvents = (location, eventCount) => { //either of them might be undefined when this function is called
     let locationEvents;
-
     getEvents().then((events) => {
       const inputNumber = eventCount || this.state.numberOfEvents;
       const selectedLocation = location || this.state.selectedLocation; //without variable the filtered list shortening doesnt work
-
       if (selectedLocation === 'all') { // refactored #2
         locationEvents = events.slice(0, inputNumber);
-        console.log('A');
       } else {
         locationEvents = events.filter((event) => event.location === selectedLocation) //why does it not work with location, only with the variable?
           .slice(0, inputNumber);
-        console.log('B');
       }
       this.setState({
         events: locationEvents,
@@ -59,14 +55,17 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Meet App</h1>
-        <CitySearch
-          locations={this.state.locations}
-          updateEvents={this.updateEvents}
-        />
-        <NumberOfEvents
-          numberOfEvents={this.state.numberOfEvents}
-          updateEvents={this.updateEvents}
-        />
+        <div className="input-fields-area">
+          <CitySearch
+            locations={this.state.locations}
+            updateEvents={this.updateEvents}
+          />
+          <NumberOfEvents
+            numberOfEvents={this.state.numberOfEvents}
+            updateEvents={this.updateEvents}
+          />
+        </div>
+
         <EventList
           events={this.state.events}
         />

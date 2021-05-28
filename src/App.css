@@ -88,6 +88,7 @@ input[type="number"] {
   max-width: 300px;
   margin: auto;
   position: relative;
+  padding-bottom: 20px;
 }
 
 .suggestions {
@@ -155,11 +156,11 @@ input[type="number"] {
   overflow-x: hidden;
 }
 
-.numberOfEvents {
+/* .numberOfEvents {
   width: 200px;
   margin: 20px auto;
   text-align: center;
-}
+} */
 
 .button-wrapper {
   display: grid;
@@ -169,10 +170,10 @@ input[type="number"] {
   font-family: sans-serif;
 }
 
-.Alert {
+/* .Alert {
   position: fixed;
   top: 20px;
-}
+} */
 
 .data-vis-wrapper {
   display: flex;

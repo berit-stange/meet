@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,700;0,900;1,400&display=swap');
 
 :root {
     --base-color: #cddae0;
@@ -8,12 +8,15 @@
     --dark-color: #221c53;
     --light-color: #fafafa;  
     --font-sans: 'Nunito', sans-serif; 
-    --font-serif: 'Nunito', sans-serif; 
+    /* --font-serif: 'Nunito', sans-serif;  */
+    --font-italic: 'Nunito', sans-serif; 
     --font-big: 3em;  
     --font-medium: 1.5em;  
     --font-small: 1em;
+    --font-fat: 900;
     --font-heavy: 700;
     --font-light: 400;  
+    --font-italic: italic; 
   }
 
 body {
@@ -33,6 +36,7 @@ input[type="text"], input[type="number"] {
     border: none;
 }
 
+
 button {
     background-color: var(--base-color);
     opacity: 0.6;
@@ -49,7 +53,7 @@ h1 {
 }
 
 h3 {
-    color:  var(--accent-color);
+    color: var(--accent-color);
 }
 
 .EventList {
@@ -63,6 +67,35 @@ h3 {
     outline: none;
 }
 
+.error-text {
+  /* font-size: var(--font-small); */
+  position: fixed;
+  top: 22%;
+  left: 65%;
+}
+
+.input-fields-area{
+  height: 10rem;
+}
+
+.Alert{
+  /* background-color: var(--light-color); */
+  font-size: var(--font-small);
+  font-style: var(--font-italic);
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  /* position: fixed;
+  top: 15%;
+  left: 65%; */
+}
+
+.info-text {
+  /* justify-self: center; */
+  position: fixed;
+  top: 14%;
+  left: 65%;
+}
 
 
 @media all and (max-width: 500px) {
@@ -90,3 +123,4 @@ h3 {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
