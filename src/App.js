@@ -21,16 +21,19 @@ class App extends Component {
     getEvents().then((events) => {
       const inputNumber = eventCount || this.state.numberOfEvents;
       const selectedLocation = location || this.state.selectedLocation;
-
-      if (selectedLocation === 'all') {
-        locationEvents = events;
-      }
-      else if (selectedLocation === '') {
-        locationEvents = events.slice(0, inputNumber);
-      }
-      else {
+      // refactored: before, shortening the list with empty city field didnt work, now it does: 
+      if (selectedLocation !== 'all') {
         locationEvents = events.filter((event) => event.location === selectedLocation)
           .slice(0, inputNumber);
+        console.log('selectedLocation !== "all"');
+      }
+      else if (inputNumber > '0') {
+        locationEvents = events.slice(0, inputNumber);
+        console.log('bingo!');
+      }
+      else {
+        locationEvents = events;
+        console.log('hm...');
       }
       this.setState({
         events: locationEvents,
