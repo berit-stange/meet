@@ -19,30 +19,22 @@ class App extends Component {
     let locationEvents;
 
     getEvents().then((events) => {
-      // const inputNumber = eventCount || this.state.numberOfEvents;
-      const selectedLocation = location || this.state.selectedLocation;
-      // refactored: before, shortening the list with empty city field didnt work, now it does: 
-      // if (selectedLocation !== 'all') {
-      //   locationEvents = events.filter((event) => event.location === selectedLocation)
-      //     .slice(0, inputNumber);
-      // } else if (inputNumber > '0') {
-      //   locationEvents = events.slice(0, inputNumber);
-      // } else {
-      //   locationEvents = events;
-      // }
-      // refactored #2
-      if (selectedLocation === 'all') {
-        locationEvents = events.slice(0, eventCount);
+      const inputNumber = eventCount || this.state.numberOfEvents;
+      const selectedLocation = location || this.state.selectedLocation; //without variable the filtered list shortening doesnt work
+
+      if (selectedLocation === 'all') { // refactored #2
+        locationEvents = events.slice(0, inputNumber);
         console.log('A');
       } else {
-        locationEvents = events.filter((event) => event.location === selectedLocation)
-          .slice(0, eventCount);
+        locationEvents = events.filter((event) => event.location === selectedLocation) //why does it not work with location, only with the variable?
+          .slice(0, inputNumber);
         console.log('B');
       }
       this.setState({
         events: locationEvents,
-        numberOfEvents: eventCount,
-        // selectedLocation
+        numberOfEvents: inputNumber, //with this.state.selectedLocation, number doesn't render  (without const inputNumber)
+        // numberOfEvents: this.state.numberOfEvents, // input number works but 24 is rendered (without const inputNumber)
+        // selectedLocation // not neccessary
       });
     });
   }
@@ -53,8 +45,7 @@ class App extends Component {
       if (this.mounted) {
         this.setState({
           locations: extractLocations(events),
-          events: events.slice(0, this.state.numberOfEvents),
-          // events
+          events: events.slice(0, this.state.numberOfEvents), //without slice() list isnt shortened to default number
         });
       }
     });
