@@ -20,6 +20,8 @@ body {
     background-color: var(--base-color);
     color:  var(--dark-color);
     font-family: var(--font-sans);
+    margin: 0 auto;
+    width: 90%;
 }
 
 div {
