@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+// import * as atatus from 'atatus-js'; from exercise
+import * as atatus from 'atatus-spa';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -21,3 +23,8 @@ serviceWorkerRegistration.unregister();
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+// Atatus Continuous Integration
+// atatus.config('YOUR_UNIQUE_ATATUS_CONFIG_CODE').install();
+atatus.config('e9b7d2f2ca914716a004d690aca7540a').install();
+// atatus.notify(new Error('Test Atatus Setup'));
