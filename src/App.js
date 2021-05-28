@@ -25,15 +25,14 @@ class App extends Component {
       if (selectedLocation !== 'all') {
         locationEvents = events.filter((event) => event.location === selectedLocation)
           .slice(0, inputNumber);
-        console.log('selectedLocation !== "all"');
-      }
-      else if (inputNumber > '0') {
+        // console.log("selectedLocation !== 'all' ");
+      } else if (inputNumber > '0') {
         locationEvents = events.slice(0, inputNumber);
-        console.log('bingo!');
+        // console.log("inputNumber > '0' ");
       }
       else {
         locationEvents = events;
-        console.log('hm...');
+        // console.log("else...");
       }
       this.setState({
         events: locationEvents,
