@@ -30,7 +30,7 @@ class App extends Component {
         events: locationEvents,
         numberOfEvents: inputNumber, //with this.state.selectedLocation, number doesn't render  (without const inputNumber)
         // numberOfEvents: this.state.numberOfEvents, // input number works but 24 is rendered (without const inputNumber)
-        // selectedLocation // not neccessary
+        selectedLocation // not neccessary
       });
     });
   }
