@@ -18,7 +18,7 @@ class CitySearch extends Component {
             this.setState({ //If the list contains no suggestions, show message
                 query: value,
                 suggestions,
-                infoText: "We can't find the city you are looking for. Please try another city",
+                infoText: "Can't find this one. Please try another!",
             });
         } else {
             return this.setState({
@@ -40,7 +40,9 @@ class CitySearch extends Component {
     render() {
         return (
             <div className="CitySearch">
-
+                <div className="info-text">
+                    <InfoAlert text={this.state.infoText} />
+                </div>
 
                 <input
                     type="text"
@@ -49,9 +51,7 @@ class CitySearch extends Component {
                     onChange={this.handleInputChanged}
                     onFocus={() => { this.setState({ showSuggestions: true }) }}
                 />
-                <div className="info-text">
-                    <InfoAlert text={this.state.infoText} />
-                </div>
+
                 <ul className="suggestions" style={this.state.showSuggestions ? {} : { display: 'none' }}>
                     {this.state.suggestions.map((suggestion) => (
                         <li
@@ -63,6 +63,7 @@ class CitySearch extends Component {
                         <b>See all cities</b>
                     </li>
                 </ul>
+
             </div>
         );
     }

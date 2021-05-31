@@ -13,6 +13,7 @@
     --font-big: 3em;  
     --font-medium: 1.5em;  
     --font-small: 1em;
+    --font-tiny: 0.8em;
     --font-fat: 900;
     --font-heavy: 700;
     --font-light: 400;  
@@ -24,18 +25,12 @@ body {
     color:  var(--dark-color);
     font-family: var(--font-sans);
     margin: 0 auto;
-    width: 90%;
-}
-
-div {
-    margin: 10px;
 }
 
 input[type="text"], input[type="number"] {
     background-color: var(--light-color);
     border: none;
 }
-
 
 button {
     background-color: var(--base-color);
@@ -50,6 +45,7 @@ button {
 h1 {
     color:  var(--accent-color);
     font-size: var(--font-big);
+    /* margin: 5% auto; */
 }
 
 h3 {
@@ -64,39 +60,57 @@ h3 {
 .event {
     background-color: var(--light-color);
     border: none;
+    margin: 5px;
     outline: none;
-}
-
-.error-text {
-  /* font-size: var(--font-small); */
-  position: fixed;
-  top: 22%;
-  left: 65%;
 }
 
 .input-fields-area{
   height: 10rem;
 }
 
+.select-number{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
 .Alert{
-  /* background-color: var(--light-color); */
-  font-size: var(--font-small);
+  font-size: var(--font-tiny);
   font-style: var(--font-italic);
-  width: 12rem;
-  height: 12rem;
-  border-radius: 50%;
-  /* position: fixed;
-  top: 15%;
-  left: 65%; */
 }
 
 .info-text {
-  /* justify-self: center; */
-  position: fixed;
-  top: 14%;
-  left: 65%;
+  align-self: center;
+  position: absolute;
+  top: -40%;
 }
 
+.error-text {
+  align-self: center;
+  position: absolute;
+  top: 100%;
+}
+
+.offline-container {
+padding-top: 1%;
+}
+
+.offline-alert {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 10px;
+  left: 50%;
+  margin-left: -50px;
+}
+
+
+@media all and (max-width: 380px) {
+  .App {
+    padding: 0% 5%;
+  }
+}
 
 @media all and (max-width: 500px) {
   .EventList {
@@ -110,12 +124,6 @@ h3 {
     grid-template-columns: 1fr;
   }
 }
-
-/* @media all and (max-width: 750px) {
-    .EventList {
-      grid-gap: 10px;
-    }
-  } */
 
 @media only screen and (min-width: 992px) {
   .EventList {

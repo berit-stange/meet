@@ -3,6 +3,7 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents, extractLocations } from './api';
+import { OfflineAlert } from './Alert';
 import './App.css';
 import './nprogress.css';
 import './custom-styles.css';
@@ -13,6 +14,7 @@ class App extends Component {
     locations: [],
     numberOfEvents: 24,
     selectedLocation: 'all',
+    offlineAlert: ''
   }
 
   updateEvents = (location, eventCount) => { //either of them might be undefined when this function is called
@@ -43,6 +45,11 @@ class App extends Component {
           locations: extractLocations(events),
           events: events.slice(0, this.state.numberOfEvents), //without slice() list isnt shortened to default number
         });
+        if (!navigator.onLine) {
+          this.setState({
+            offlineAlert: 'You are offline'
+          })
+        }
       }
     });
   }
@@ -54,7 +61,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div className="offline-container">
+          <div className="offline-alert">
+            <OfflineAlert text={this.state.offlineAlert} />
+          </div>
+        </div>
         <h1>Meet App</h1>
+
+
+
         <div className="input-fields-area">
           <CitySearch
             locations={this.state.locations}
@@ -65,6 +80,9 @@ class App extends Component {
             updateEvents={this.updateEvents}
           />
         </div>
+
+
+
 
         <EventList
           events={this.state.events}

@@ -1,48 +1,9 @@
-/* .App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-@import url(https://fonts.googleapis.com/css?family=Roboto:500);
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&display=swap');
 
 .App {
   text-align: center;
-  padding: 2% 5%;
+  padding: 0% 5%;
 }
 
 .App * {
@@ -61,6 +22,7 @@ p {
 .display-none {
   display: none;
 }
+
 .showSuggestions {
   display: block;
 }
@@ -85,10 +47,12 @@ input[type="number"] {
   display: flex;
   flex-direction: column;
   flex-basis: 300px;
+  justify-content: center;
   max-width: 300px;
   margin: auto;
   position: relative;
   padding-bottom: 20px;
+  padding-top: 5px;
 }
 
 .suggestions {
@@ -180,10 +144,12 @@ input[type="number"] {
   align-items: center;
   flex-direction: column;
 }
+
 .data-vis-wrapper .recharts-responsive-container {
   min-width: 100%;
   display: flex;
 }
+
 .recharts-surface {
   overflow: visible;
 }
@@ -209,12 +175,15 @@ input[type="number"] {
   border-radius: 2px;
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
 }
+
 .google-btn:hover {
   box-shadow: 0 0 6px #4285f4;
 }
+
 .google-btn:active {
   background: #1669f2;
 }
+
 .google-icon-wrapper {
   position: absolute;
   margin-top: 1px;
@@ -224,6 +193,7 @@ input[type="number"] {
   border-radius: 2px;
   background-color: #fff;
 }
+
 .google-icon {
   position: absolute;
   margin-top: 11px;
@@ -231,6 +201,7 @@ input[type="number"] {
   width: 18px;
   height: 18px;
 }
+
 .btn-text {
   float: right;
   margin: 11px 11px 0 0;
