@@ -10,6 +10,20 @@
   box-sizing: border-box;
 }
 
+a,
+a:visited {
+  color: var(--dark-color);
+  text-decoration: none;
+}
+
+a:active,
+a:focus,
+a:focus-visible,
+a:hover {
+  color: var(--light-color);
+  outline: none;
+}
+
 ul {
   padding: 0;
   list-style: none;
@@ -32,7 +46,7 @@ input[type="number"] {
   padding: 8px 6px 8px 10px;
   border-radius: 4px;
   outline: none;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   font-size: 14px;
   line-height: 20px;
   align-self: center;
@@ -63,7 +77,7 @@ input[type="number"] {
   margin: 0;
   top: 43px;
   font-size: 14px;
-  box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 16px -12px var(--dark-color);
 }
 
 .suggestions > li {
@@ -79,19 +93,19 @@ input[type="number"] {
 }
 
 .suggestions > li:hover {
-  background-color: #bcdcdb;
+  background-color: var(--accent-color);
 }
 
-.event {
+/* .event {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
-  border: 1px solid #ccc;
+  border: 1px solid;
   border-radius: 4px;
   position: relative;
-}
+} */
 
-.details-btn {
+/* .details-btn {
   position: absolute;
   right: 5px;
   bottom: 5px;
@@ -99,7 +113,7 @@ input[type="number"] {
   border-radius: 4px;
   outline: none;
   cursor: pointer;
-}
+} */
 
 .name {
   font-size: 18px;
@@ -168,30 +182,30 @@ input[type="number"] {
 }
 
 .google-btn {
-  width: 184px;
-  height: 42px;
+  width: 250px;
+  /* height: 42px; */
   margin: 1rem;
-  background-color: #4285f4;
+  /* background-color: #4285f4; */
   border-radius: 2px;
-  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25); */
 }
 
 .google-btn:hover {
-  box-shadow: 0 0 6px #4285f4;
+  box-shadow: 0 0 6px var(--light-color);
 }
 
 .google-btn:active {
-  background: #1669f2;
+  background: var(--light-color);
 }
 
 .google-icon-wrapper {
   position: absolute;
-  margin-top: 1px;
-  margin-left: 1px;
+  /* margin-top: 1px; */
+  /* margin-left: 1px; */
   width: 40px;
   height: 40px;
   border-radius: 2px;
-  background-color: #fff;
+  background-color: var(--light-color);
 }
 
 .google-icon {
@@ -203,13 +217,22 @@ input[type="number"] {
 }
 
 .btn-text {
-  float: right;
-  margin: 11px 11px 0 0;
-  color: #fff;
+  position: relative;
+  background-color: var(--accent-color);
+  color: var(--light-color);
   font-size: 14px;
   letter-spacing: 0.2px;
-  font-family: "Roboto";
+  margin-left: 40px;
+  height: 40px;
+  width: 210px;
 }
+
+/* button {
+  background-color: var(--accent-color);
+  margin-left: 40px;
+  height: 40px;
+  width: 210px;
+} */
 
 
 

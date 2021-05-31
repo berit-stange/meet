@@ -4,7 +4,8 @@
     --base-color: #cddae0;
     /* --accent-color: rgb(228, 110, 42); */ /* orange */
     /* --accent-color: rgb(191, 42, 228); purple */
-    --accent-color: #e42a2a; 
+    /* --accent-color: #e42a2a;  knallrot */ 
+    --accent-color: #e25d3c;
     --dark-color: #221c53;
     --light-color: #fafafa;  
     --font-sans: 'Nunito', sans-serif; 
@@ -34,7 +35,6 @@ input[type="text"], input[type="number"] {
 
 button {
     background-color: var(--base-color);
-    opacity: 0.6;
     border: none;
     color:  var(--dark-color);
     font-family: var(--font-sans);
@@ -45,7 +45,6 @@ button {
 h1 {
     color:  var(--accent-color);
     font-size: var(--font-big);
-    /* margin: 5% auto; */
 }
 
 h3 {
@@ -58,10 +57,15 @@ h3 {
 }
 
 .event {
-    background-color: var(--light-color);
-    border: none;
-    margin: 5px;
-    outline: none;
+  background-color: var(--light-color);
+  border: none;
+  margin: 5px;
+  outline: none;
+  padding: 10px 10px 35px;
+  margin-bottom: 10px;
+  text-align: left;
+  border-radius: 4px;
+  position: relative;
 }
 
 .input-fields-area{
