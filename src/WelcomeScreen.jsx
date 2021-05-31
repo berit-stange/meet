@@ -27,8 +27,7 @@ function WelcomeScreen(props) {
                     href="https://berit-stange.github.io/meet/privacy.html"
                     rel="nofollow noopener"
                 >
-                    Privacy policy
-</a>
+                    Privacy policy</a>
             </div>
         )
         : null
