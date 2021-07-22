@@ -1,4 +1,4 @@
-# meet application
+# MEET APP
 
 ## Project description
 Building a serverless, progressive web application (PWA) with React using a test-driven
