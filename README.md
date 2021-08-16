@@ -22,6 +22,10 @@ upcoming events.
 
 
 ## Deployment
+For deploying reun: 
+```
+npm run deploy
+```
 Hosted on Github Pages: [ mymovies-app.netlify.app ](https://berit-stange.github.io/meet/) 
 
 
@@ -39,3 +43,6 @@ Install dependencies:
 ```
 npm install
 ```
+
+## Context
+This was a project for the Full-Stack Web Development program of Careerfoundry
